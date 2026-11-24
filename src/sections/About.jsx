@@ -1,3 +1,4 @@
+
 function About() {
   const focusAreas = [
     'Frontend Development',
@@ -19,18 +20,18 @@ function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-[#0b0e1b] px-6 py-24 lg:px-10 lg:py-32"
+      className="relative overflow-hidden bg-[#181A1D] px-6 py-24 lg:px-10 lg:py-32"
     >
       <div className="mx-auto max-w-7xl">
 
         {/* Section Heading */}
         <div className="mb-16">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-purple-400">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
             Get to know me
           </p>
 
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            About <span className="text-purple-400">Me.</span>
+            About <span className="text-orange-500">Me.</span>
           </h2>
 
           <p className="mt-5 max-w-2xl text-base leading-8 text-gray-400">
@@ -85,7 +86,7 @@ function About() {
                 {focusAreas.map((area) => (
                   <span
                     key={area}
-                    className="rounded-full border border-purple-400/20 bg-purple-500/5 px-4 py-2 text-sm text-purple-300"
+                    className="rounded-full border border-orange-500/25 bg-orange-500/10 px-4 py-2 text-sm text-orange-300 transition-colors hover:border-orange-500/50 hover:bg-orange-500/15"
                   >
                     {area}
                   </span>
@@ -98,12 +99,12 @@ function About() {
           <div className="relative">
 
             {/* Background Glow */}
-            <div className="absolute -right-10 top-10 h-64 w-64 rounded-full bg-purple-600/10 blur-[100px]" />
+            <div className="absolute -right-10 top-10 h-64 w-64 rounded-full bg-orange-600/10 blur-[100px]" />
 
-            <div className="relative rounded-3xl border border-white/10 bg-white/[0.03] p-7 sm:p-9">
+            <div className="relative rounded-3xl border border-white/10 bg-[#202327] p-7 shadow-xl shadow-black/10 sm:p-9">
 
               <div className="mb-8">
-                <p className="text-sm font-medium text-purple-400">
+                <p className="text-sm font-medium text-orange-500">
                   My Development Toolkit
                 </p>
 
@@ -122,7 +123,7 @@ function About() {
                 {technologies.map((technology) => (
                   <div
                     key={technology}
-                    className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-medium text-gray-300 transition-all hover:border-purple-400/40 hover:bg-purple-500/10 hover:text-purple-300"
+                    className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm font-medium text-gray-300 transition-all duration-300 hover:-translate-y-1 hover:border-orange-500/50 hover:bg-orange-500/10 hover:text-orange-300"
                   >
                     {technology}
                   </div>

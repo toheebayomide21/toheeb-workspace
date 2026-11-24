@@ -2,35 +2,54 @@
 const experiences = [
   {
     number: '01',
-    role: 'Software Development Experience',
-    organization: 'NYSC / PPA',
+    role: 'Frontend Developer (NYSC)',
+    organization: 'Macrotech Business Solution Limited',
     type: 'Professional Experience',
     period: 'Present',
     description:
-      'Building practical software development experience through contributing to web application development and working with modern frontend technologies.',
+      'Currently gaining professional software development experience at Macrotech Business Solution Limited, contributing to the development of web-based applications using modern frontend technologies.',
     responsibilities: [
       'Developing responsive user interfaces using React and Tailwind CSS.',
       'Integrating frontend features with backend REST APIs.',
       'Working on project management, task workflows, and team management features.',
-      'Implementing role-based access and permissions.',
-      'Collaborating with other developers to improve application functionality.',
+      'Implementing role-based access control and permission-driven user experiences.',
+      'Identifying and resolving frontend issues while improving application usability.',
+      'Collaborating with other developers throughout the software development process.',
     ],
-    technologies: ['React', 'JavaScript', 'Tailwind CSS', 'REST APIs'],
+    technologies: [
+      'React',
+      'JavaScript',
+      'Tailwind CSS',
+      'REST APIs',
+      'Git',
+      'GitHub',
+    ],
   },
   {
     number: '02',
-    role: 'Trainee',
+    role: 'IT Trainee',
     organization: 'Fortpremium International',
     type: 'Professional Training',
     period: 'Training Experience',
     description:
-      'Gained practical exposure to a professional working environment through training at Fortpremium International.',
+      'Received practical IT and computer applications training, gaining hands-on experience in office productivity tools, graphic design, computer operations, and digital services.',
     responsibilities: [
-      'Participated in practical workplace training.',
-      'Developed professional skills through hands-on experience.',
-      'Gained exposure to working with a team and handling assigned responsibilities.',
+      'Used Microsoft Word, Excel, and PowerPoint for document creation, data management, and presentations.',
+      'Practised basic graphic design using CorelDRAW.',
+      'Carried out computer operations, file management, and basic troubleshooting.',
+      'Performed typing, data entry, printing, scanning, and photocopying.',
+      'Assisted with internet usage and online registration activities.',
+      'Created, formatted, and prepared documents for professional presentation.',
     ],
-    technologies: ['Professional Development', 'Practical Training'],
+    technologies: [
+      'Microsoft Word',
+      'Microsoft Excel',
+      'Microsoft PowerPoint',
+      'CorelDRAW',
+      'Computer Operations',
+      'Data Entry',
+      'Online Registration',
+    ],
   },
   {
     number: '03',
@@ -59,17 +78,18 @@ function Experience() {
   return (
     <section
       id="experience"
-      className="relative overflow-hidden bg-[#080b16] px-6 py-24 lg:px-10 lg:py-32"
+      className="relative overflow-hidden bg-[#111315] px-6 py-24 lg:px-10 lg:py-32"
     >
       <div className="mx-auto max-w-7xl">
+
         {/* Section heading */}
         <div className="mb-16 max-w-2xl">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-purple-400">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
             My Journey
           </p>
 
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            Experience<span className="text-purple-400">.</span>
+            Experience<span className="text-orange-500">.</span>
           </h2>
 
           <p className="mt-5 text-base leading-8 text-slate-400">
@@ -81,7 +101,8 @@ function Experience() {
 
         {/* Experience timeline */}
         <div className="relative">
-          <div className="absolute bottom-0 left-[15px] top-2 w-px bg-purple-400/20 sm:left-[19px]" />
+          {/* Timeline line */}
+          <div className="absolute bottom-0 left-[15px] top-2 w-px bg-orange-500/25 sm:left-[19px]" />
 
           <div className="space-y-10">
             {experiences.map((experience) => (
@@ -90,19 +111,19 @@ function Experience() {
                 className="relative pl-12 sm:pl-16"
               >
                 {/* Timeline marker */}
-                <div className="absolute left-0 top-1 flex h-8 w-8 items-center justify-center rounded-full border border-purple-400/40 bg-[#151027] sm:h-10 sm:w-10">
-                  <div className="h-2.5 w-2.5 rounded-full bg-purple-400" />
+                <div className="absolute left-0 top-1 flex h-8 w-8 items-center justify-center rounded-full border border-orange-500/40 bg-[#202327] sm:h-10 sm:w-10">
+                  <div className="h-2.5 w-2.5 rounded-full bg-orange-500 shadow-[0_0_12px_rgba(249,115,22,0.5)]" />
                 </div>
 
                 {/* Experience card */}
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:border-purple-400/30 sm:p-9">
+                <div className="rounded-2xl border border-white/10 bg-[#202327] p-6 transition duration-300 hover:-translate-y-1 hover:border-orange-500/35 hover:shadow-xl hover:shadow-orange-950/10 sm:p-9">
                   <div className="mb-7 flex flex-col justify-between gap-4 sm:flex-row sm:items-start">
                     <div>
-                      <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-purple-400">
+                      <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-orange-500">
                         {experience.type}
                       </p>
 
-                      <h3 className="text-2xl font-semibold text-white sm:text-3xl">
+                      <h3 className="text-2xl font-semibold text-white transition-colors duration-300 hover:text-orange-400 sm:text-3xl">
                         {experience.role}
                       </h3>
 
@@ -111,7 +132,7 @@ function Experience() {
                       </p>
                     </div>
 
-                    <span className="w-fit rounded-full border border-purple-400/20 bg-purple-400/10 px-4 py-2 text-xs font-medium text-purple-200">
+                    <span className="w-fit rounded-full border border-orange-500/25 bg-orange-500/10 px-4 py-2 text-xs font-medium text-orange-300">
                       {experience.period}
                     </span>
                   </div>
@@ -131,7 +152,7 @@ function Experience() {
                           key={responsibility}
                           className="flex items-start gap-3 text-sm leading-7 text-slate-400"
                         >
-                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-400" />
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-500" />
                           {responsibility}
                         </li>
                       ))}
@@ -147,7 +168,7 @@ function Experience() {
                       {experience.technologies.map((technology) => (
                         <span
                           key={technology}
-                          className="rounded-lg bg-purple-400/10 px-3 py-2 text-xs font-medium text-purple-200"
+                          className="rounded-lg border border-orange-500/10 bg-orange-500/10 px-3 py-2 text-xs font-medium text-orange-200 transition-colors duration-300 hover:border-orange-500/30 hover:bg-orange-500/15"
                         >
                           {technology}
                         </span>
@@ -159,6 +180,7 @@ function Experience() {
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );

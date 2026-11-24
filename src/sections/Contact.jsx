@@ -1,6 +1,11 @@
 
 import { useState } from 'react';
-import { Mail, ArrowUpRight, MapPin } from 'lucide-react';
+import {
+  Mail,
+  ArrowUpRight,
+  MapPin,
+  MessageCircle,
+} from 'lucide-react';
 
 // Contact links
 const contactLinks = [
@@ -11,10 +16,22 @@ const contactLinks = [
     icon: Mail,
   },
   {
+    label: 'WhatsApp',
+    value: 'Chat with me on WhatsApp',
+    href: 'https://wa.me/2349130776697?text=Hello%20Toheeb%2C%20I%20visited%20your%20portfolio.',
+    icon: MessageCircle,
+  },
+  {
     label: 'GitHub',
     value: 'github.com/toheebayomide21',
     href: 'https://github.com/toheebayomide21',
     icon: GithubIcon,
+  },
+  {
+    label: 'X (Twitter)',
+    value: 'x.com/maino_utd',
+    href: 'https://x.com/maino_utd',
+    icon: XIcon,
   },
   {
     label: 'LinkedIn',
@@ -60,6 +77,22 @@ function LinkedinIcon({ size = 21, className = '' }) {
   );
 }
 
+// Custom X icon
+function XIcon({ size = 21, className = '' }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-5-7.2L5.6 22H2.4l7.3-8.4L1.8 2h6.4l4.5 6.7L18.9 2Zm-1.1 18h1.7L7.3 3.9H5.5L17.8 20Z" />
+    </svg>
+  );
+}
+
 function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -98,18 +131,18 @@ ${formData.message}
   return (
     <section
       id="contact"
-      className="relative scroll-mt-24 overflow-hidden bg-[#080b16] px-6 py-24 lg:px-10 lg:py-32"
+      className="relative scroll-mt-24 overflow-hidden bg-[#111315] px-6 py-24 lg:px-10 lg:py-32"
     >
       <div className="mx-auto max-w-7xl">
 
         {/* Section heading */}
         <div className="mb-14 max-w-2xl">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-purple-400">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
             Get In Touch
           </p>
 
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            Let's Work Together<span className="text-purple-400">.</span>
+            Let's Work Together<span className="text-orange-500">.</span>
           </h2>
 
           <p className="mt-5 text-base leading-8 text-slate-400">
@@ -140,10 +173,10 @@ ${formData.message}
                     key={link.label}
                     href={link.href}
                     target={link.label === 'Email' ? undefined : '_blank'}
-                    rel={link.label === 'Email' ? undefined : 'noreferrer'}
-                    className="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-4 transition hover:border-purple-400/40 hover:bg-white/[0.06]"
+                    rel={link.label === 'Email' ? undefined : 'noopener noreferrer'}
+                    className="group flex items-center gap-4 rounded-xl border border-white/10 bg-[#202327] p-4 transition duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-[#25292D]"
                   >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-400/10 text-purple-300 transition group-hover:bg-purple-400/20">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500/10 text-orange-400 transition duration-300 group-hover:bg-orange-500/20 group-hover:text-orange-300">
                       <Icon size={21} />
                     </div>
 
@@ -159,7 +192,7 @@ ${formData.message}
 
                     <ArrowUpRight
                       size={18}
-                      className="text-slate-500 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-purple-300"
+                      className="text-slate-500 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-orange-400"
                     />
                   </a>
                 );
@@ -167,13 +200,13 @@ ${formData.message}
             </div>
 
             <div className="mt-8 flex items-center gap-3 text-sm text-slate-400">
-              <MapPin size={18} className="text-purple-400" />
+              <MapPin size={18} className="text-orange-500" />
               Lagos, Nigeria
             </div>
           </div>
 
           {/* Contact form */}
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
+          <div className="rounded-2xl border border-white/10 bg-[#202327] p-6 shadow-xl shadow-black/10 sm:p-8">
             <h3 className="text-xl font-semibold text-white">
               Send me a message
             </h3>
@@ -200,7 +233,7 @@ ${formData.message}
                   onChange={handleChange}
                   placeholder="Enter your name"
                   required
-                  className="w-full rounded-lg border border-white/10 bg-[#0c1020] px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-purple-400"
+                  className="w-full rounded-lg border border-white/10 bg-[#181A1D] px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/10"
                 />
               </div>
 
@@ -220,7 +253,7 @@ ${formData.message}
                   onChange={handleChange}
                   placeholder="Enter your email"
                   required
-                  className="w-full rounded-lg border border-white/10 bg-[#0c1020] px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-purple-400"
+                  className="w-full rounded-lg border border-white/10 bg-[#181A1D] px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/10"
                 />
               </div>
 
@@ -240,7 +273,7 @@ ${formData.message}
                   onChange={handleChange}
                   placeholder="What is this about?"
                   required
-                  className="w-full rounded-lg border border-white/10 bg-[#0c1020] px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-purple-400"
+                  className="w-full rounded-lg border border-white/10 bg-[#181A1D] px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/10"
                 />
               </div>
 
@@ -260,13 +293,13 @@ ${formData.message}
                   onChange={handleChange}
                   placeholder="Write your message..."
                   required
-                  className="w-full resize-none rounded-lg border border-white/10 bg-[#0c1020] px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-purple-400"
+                  className="w-full resize-none rounded-lg border border-white/10 bg-[#181A1D] px-4 py-3 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/10"
                 />
               </div>
 
               <button
                 type="submit"
-                className="flex w-full items-center justify-center gap-2 rounded-lg bg-purple-500 px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-purple-400"
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-orange-600 px-5 py-3.5 text-sm font-semibold text-white transition duration-300 hover:bg-orange-500 hover:shadow-lg hover:shadow-orange-950/20"
               >
                 Send Message
                 <ArrowUpRight size={18} />

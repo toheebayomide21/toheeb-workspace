@@ -1,3 +1,4 @@
+
 const footerLinks = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
@@ -10,7 +11,7 @@ const footerLinks = [
 
 function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#080b16] px-6 py-12 lg:px-10">
+    <footer className="border-t border-white/10 bg-[#111315] px-6 py-12 lg:px-10">
       <div className="mx-auto max-w-7xl">
 
         <div className="flex flex-col justify-between gap-10 md:flex-row">
@@ -21,7 +22,7 @@ function Footer() {
               href="#home"
               className="text-2xl font-bold tracking-tight text-white"
             >
-              Toheeb<span className="text-purple-400"> Abobarin</span>
+              Toheeb<span className="text-orange-500"> Abobarin</span>
             </a>
 
             <p className="mt-4 text-sm leading-7 text-slate-400">
@@ -31,7 +32,7 @@ function Footer() {
 
             <a
               href="mailto:toheebabobarin21@gmail.com"
-              className="mt-5 inline-block text-sm text-purple-400 transition hover:text-purple-300"
+              className="mt-5 inline-block text-sm text-orange-400 transition hover:text-orange-300"
             >
               toheebabobarin21@gmail.com
             </a>
@@ -48,7 +49,7 @@ function Footer() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-sm text-slate-400 transition hover:text-purple-400"
+                  className="text-sm text-slate-400 transition hover:text-orange-400"
                 >
                   {link.name}
                 </a>
@@ -67,14 +68,14 @@ function Footer() {
                 href="https://github.com/toheebayomide21"
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm text-slate-400 transition hover:text-purple-400"
+                className="text-sm text-slate-400 transition hover:text-orange-400"
               >
                 GitHub ↗
               </a>
 
               <a
                 href="mailto:toheebabobarin21@gmail.com"
-                className="text-sm text-slate-400 transition hover:text-purple-400"
+                className="text-sm text-slate-400 transition hover:text-orange-400"
               >
                 Email Me ↗
               </a>
@@ -90,7 +91,7 @@ function Footer() {
 
           <a
             href="#home"
-            className="text-xs font-medium text-slate-400 transition hover:text-purple-400"
+            className="text-xs font-medium text-slate-400 transition hover:text-orange-400"
           >
             Back to Top ↑
           </a>

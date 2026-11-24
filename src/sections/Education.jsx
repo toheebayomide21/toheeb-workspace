@@ -32,17 +32,18 @@ function Education() {
   return (
     <section
       id="education"
-      className="bg-[#0c1020] px-6 py-24 lg:px-10 lg:py-32"
+      className="bg-[#181A1D] px-6 py-24 lg:px-10 lg:py-32"
     >
       <div className="mx-auto max-w-7xl">
+
         {/* Section heading */}
         <div className="mb-14 max-w-2xl">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-purple-400">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.25em] text-orange-500">
             Academic Background
           </p>
 
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            Education<span className="text-purple-400">.</span>
+            Education<span className="text-orange-500">.</span>
           </h2>
 
           <p className="mt-5 text-base leading-8 text-slate-400">
@@ -56,10 +57,10 @@ function Education() {
           {education.map((item) => (
             <article
               key={item.number}
-              className="group rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition duration-300 hover:-translate-y-1 hover:border-purple-400/40 hover:bg-white/[0.05] sm:p-9"
+              className="group rounded-2xl border border-white/10 bg-[#202327] p-7 transition duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:shadow-xl hover:shadow-orange-950/10 sm:p-9"
             >
               <div className="mb-8 flex items-center justify-between">
-                <span className="text-sm font-semibold text-purple-400">
+                <span className="text-sm font-semibold text-orange-500">
                   {item.type}
                 </span>
 
@@ -68,11 +69,11 @@ function Education() {
                 </span>
               </div>
 
-              <h3 className="text-2xl font-semibold leading-snug text-white transition group-hover:text-purple-300 sm:text-3xl">
+              <h3 className="text-2xl font-semibold leading-snug text-white transition-colors duration-300 group-hover:text-orange-400 sm:text-3xl">
                 {item.qualification}
               </h3>
 
-              <p className="mt-4 text-base font-medium text-purple-300">
+              <p className="mt-4 text-base font-medium text-orange-300">
                 {item.institution}
               </p>
 
@@ -91,7 +92,7 @@ function Education() {
                       key={highlight}
                       className="flex items-start gap-3 text-sm leading-7 text-slate-400"
                     >
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-purple-400" />
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-orange-500" />
                       {highlight}
                     </li>
                   ))}
@@ -100,6 +101,7 @@ function Education() {
             </article>
           ))}
         </div>
+
       </div>
     </section>
   );

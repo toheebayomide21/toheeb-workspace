@@ -1,4 +1,9 @@
+
 @import "tailwindcss";
+
+/* ========================================
+   GLOBAL STYLES
+======================================== */
 
 * {
   box-sizing: border-box;
@@ -12,6 +17,271 @@ body {
   margin: 0;
   min-width: 320px;
   font-family: Inter, sans-serif;
-  background: #080b16;
-  color: #ffffff;
+  background: #111315;
+  color: #F8FAFC;
+}
+
+/* Smooth theme transitions */
+body,
+header,
+section,
+article,
+nav,
+footer,
+button,
+a,
+input,
+textarea {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* ========================================
+   HERO ANIMATIONS
+======================================== */
+
+.hero-fade-up {
+  animation: heroFadeUp 1s ease-out both;
+}
+
+.hero-card-enter {
+  animation: heroCardEnter 1.2s ease-out both;
+  animation-delay: 0.2s;
+}
+
+.typing-cursor {
+  display: inline-block;
+  margin-left: 3px;
+  animation: cursorBlink 0.8s steps(2, start) infinite;
+}
+
+.hero-floating {
+  animation: heroFloating 4s ease-in-out infinite;
+}
+
+.hero-glow-pulse {
+  animation: heroGlowPulse 7s ease-in-out infinite alternate;
+}
+
+/* Keyframes */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroCardEnter {
+  from {
+    opacity: 0;
+    transform: translateX(35px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes cursorBlink {
+  to {
+    visibility: hidden;
+  }
+}
+
+@keyframes heroFloating {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes heroGlowPulse {
+  from {
+    opacity: 0.55;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+/* ========================================
+   THEME COLOURS
+======================================== */
+
+:root {
+  --color-graphite: #111315;
+  --color-graphite-light: #181A1D;
+  --color-graphite-card: #202327;
+
+  --color-orange: #F97316;
+  --color-orange-light: #FB923C;
+
+  --color-off-white: #F8FAFC;
+
+  --color-light-background: #F4F4F5;
+  --color-light-card: #FFFFFF;
+  --color-dark-text: #18181B;
+  --color-light-border: #D4D4D8;
+}
+
+/* ========================================
+   DARK THEME
+======================================== */
+
+html[data-theme="dark"] body {
+  background: var(--color-graphite);
+  color: var(--color-off-white);
+}
+
+html[data-theme="dark"] .portfolio-navbar {
+  background: rgba(17, 19, 21, 0.94);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] .mobile-navigation {
+  background: var(--color-graphite-light);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ========================================
+   LIGHT THEME
+======================================== */
+
+html[data-theme="light"] body {
+  background: var(--color-light-background);
+  color: var(--color-dark-text);
+}
+
+/* Navbar */
+html[data-theme="light"] .portfolio-navbar {
+  background: rgba(244, 244, 245, 0.97);
+  border-color: var(--color-light-border);
+}
+
+html[data-theme="light"] .mobile-navigation {
+  background: #FFFFFF;
+  border-color: var(--color-light-border);
+}
+
+/* Section backgrounds */
+html[data-theme="light"] [class*="bg-[#111315]"],
+html[data-theme="light"] [class*="bg-[#080b16]"] {
+  background-color: #F4F4F5 !important;
+}
+
+html[data-theme="light"] [class*="bg-[#181A1D]"] {
+  background-color: #EAEAEC !important;
+}
+
+/* Cards and panels */
+html[data-theme="light"] [class*="bg-[#202327]"] {
+  background-color: #FFFFFF !important;
+}
+
+html[data-theme="light"] [class*="bg-[#0c1020]"] {
+  background-color: #FFFFFF !important;
+}
+
+html[data-theme="light"] .bg-white\/\[0\.03\],
+html[data-theme="light"] .bg-white\/\[0\.04\],
+html[data-theme="light"] .bg-white\/5,
+html[data-theme="light"] .bg-\[\#15182a\] {
+  background-color: #FFFFFF !important;
+}
+
+/* Text contrast */
+html[data-theme="light"] .text-white {
+  color: #18181B !important;
+}
+
+html[data-theme="light"] .text-gray-200,
+html[data-theme="light"] .text-slate-200 {
+  color: #27272A !important;
+}
+
+html[data-theme="light"] .text-gray-300,
+html[data-theme="light"] .text-slate-300 {
+  color: #3F3F46 !important;
+}
+
+html[data-theme="light"] .text-gray-400,
+html[data-theme="light"] .text-slate-400 {
+  color: #52525B !important;
+}
+
+html[data-theme="light"] .text-gray-500,
+html[data-theme="light"] .text-slate-500 {
+  color: #71717A !important;
+}
+
+/* Orange text contrast */
+html[data-theme="light"] .text-orange-300,
+html[data-theme="light"] .text-orange-400,
+html[data-theme="light"] .text-orange-500 {
+  color: #C2410C !important;
+}
+
+/* Keep white text on orange buttons */
+html[data-theme="light"] .bg-orange-600.text-white,
+html[data-theme="light"] .bg-orange-500.text-white,
+html[data-theme="light"] .bg-orange-400.text-white {
+  color: #FFFFFF !important;
+}
+
+/* Borders */
+html[data-theme="light"] .border-white\/10,
+html[data-theme="light"] .border-white\/5 {
+  border-color: #D4D4D8 !important;
+}
+
+/* Form fields */
+html[data-theme="light"] input,
+html[data-theme="light"] textarea {
+  color: #18181B;
+}
+
+html[data-theme="light"] input::placeholder,
+html[data-theme="light"] textarea::placeholder {
+  color: #A1A1AA;
+}
+
+/* Theme toggle */
+html[data-theme="light"] .theme-toggle {
+  color: #C2410C;
+  background-color: #FFFFFF;
+  border-color: #FDBA74;
+}
+
+/* Back to top button */
+html[data-theme="light"] button.bg-orange-600 {
+  color: #FFFFFF !important;
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
